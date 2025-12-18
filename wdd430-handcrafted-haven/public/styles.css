@@ -1,0 +1,93 @@
+/* Public stylesheet to replace Tailwind utilities for simple components.
+   This file is intentionally minimal and focused on the login page utilities.
+   It lives in /public so it can be linked from the RootLayout.
+*/
+
+.page-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--color-background, #f3f4f6);
+  padding: 1rem;
+}
+
+.card-form {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  width: 100%;
+  max-width: 24rem; /* ~384px */
+}
+
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--color-text, #111827);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  outline: none;
+  transition: box-shadow 150ms ease, border-color 150ms ease;
+}
+
+.input:focus {
+  box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.12);
+  border-color: var(--color-secondary, #2563eb);
+}
+
+.btn-primary {
+  width: 100%;
+  background-color: var(--color-secondary, #2563eb);
+  color: #ffffff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 150ms ease;
+}
+
+.btn-primary:hover {
+  background-color: #1e40af;
+}
+
+.btn-secondary {
+  width: 100%;
+  margin-top: 0.75rem;
+  background-color: #16a34a;
+  color: #ffffff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-secondary:hover {
+  background-color: #15803d;
+}
+
+.msg {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--color-text, #111827);
+}

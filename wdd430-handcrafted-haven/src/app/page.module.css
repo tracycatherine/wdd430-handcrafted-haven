@@ -1,0 +1,239 @@
+.page {
+  background-color: #f9fafb;
+  color: #111827;
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+/* Hero Section */
+.hero {
+  position: relative; 
+  height: 400px; 
+  padding: 0;
+  background-color: #293474; 
+  color: white;
+  overflow: hidden; 
+}
+
+/* Overlay (visible only for desktop hero) */
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.45)
+  ); 
+  z-index: 0; 
+}
+
+/* Ensure hero content appears above overlay */
+.heroContent {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 2rem;
+  z-index: 1; 
+}
+
+/* Image inside wrapper */
+.navIcon {
+  object-fit: contain; /* Keep correct proportions */
+  padding: 2px;
+}
+
+
+
+.title {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.ctaButtons {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem; 
+}
+
+.ctaButtons a {
+  margin-right: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.primaryBtn {
+  background-color: #d58b0b;
+  color: #111827;
+}
+
+.secondaryBtn {
+  background-color: #d58b0b;
+  color: #111827;
+}
+
+.heroImageDesktop {
+  object-fit: cover; 
+  object-position: center top; 
+  border-radius: 0; 
+}
+
+.heroImageMobile {
+  display: none; 
+}
+
+/* Categories Section */
+.categories {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 250px;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Mission Section */
+.mission {
+  padding: 3rem 2rem;
+  background-color: #f3f4f6;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Footer */
+.footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: #293474;
+  color: white;
+  font-size: 0.9rem;
+}
+
+
+/* ====== Responsive (Mobile) ====== */
+@media (max-width: 900px) {
+  .hero {
+    position: static; 
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem 0 0; 
+  }
+
+  .heroContent {
+    position: static;
+    transform: none;
+    max-width: none;
+    padding: 0 1rem; 
+  }
+
+  .heroImageDesktop {
+    display: none; 
+  }
+
+  .heroImageMobile {
+    display: block; 
+    width: 100%;
+    height: auto;
+    border-radius: 12px 12px 0 0;
+    margin: 0;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .categories h2 {
+    font-size: 1.5rem;
+  }
+
+  .heroOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0)
+    ); 
+    z-index: 0; 
+  }
+}
+
+@media (max-width: 670px) {
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 200px;
+    padding: 10px 20px; 
+    font-size: 14px;
+    transform: translateX(4%); /* ← ADD */
+    right: auto;
+  }
+
+  .grid {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .heroOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0)
+    ); 
+    z-index: 0; 
+  }
+}
+

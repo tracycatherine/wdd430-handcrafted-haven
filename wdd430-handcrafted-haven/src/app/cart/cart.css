@@ -1,0 +1,28 @@
+.cart-container {
+  max-width: 600px;
+  margin: 80px auto;
+  padding: 20px;
+}
+
+.cart-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-controls button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #0070f3;
+  color: white;
+  border-radius: 5px;
+}
+
+.cart-controls button.remove {
+  background-color: #d33;
+}
