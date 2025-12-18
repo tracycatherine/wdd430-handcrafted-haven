@@ -1,25 +1,14 @@
-import { NextRequest, NextResponse } from "next/server";
-import { connectToDatabase } from "@/utils/db";
-import { hashPassword } from "@/utils/auth";
+// src/app/api/auth/signup/route.ts
+'use server';
 
-export async function POST(req: NextRequest) {
-  try {
-    const body = await req.json();
-    const { email, password } = body;
-    if (!email || !password) return NextResponse.json({ error: "Missing fields" }, { status: 400 });
+export async function POST(req: Request) {
+  const { name, email, password } = await req.json();
 
-    const db = await connectToDatabase();
-    const users = db.collection("users");
+  // You can simulate creating a user by returning the submitted data
+  const newUser = { name, email, password };
 
-    const existing = await users.findOne({ email });
-    if (existing) return NextResponse.json({ error: "User exists" }, { status: 409 });
-
-    const hashed = await hashPassword(password);
-    const res = await users.insertOne({ email, password: hashed, createdAt: new Date() });
-
-    return NextResponse.json({ insertedId: res.insertedId.toString() }, { status: 201 });
-  } catch (err) {
-    console.error(err);
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
-  }
+  return new Response(JSON.stringify({ message: 'Signup successful', user: newUser }), {
+    status: 201,
+    headers: { 'Content-Type': 'application/json' },
+  });
 }
